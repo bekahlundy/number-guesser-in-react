@@ -3,6 +3,11 @@ import ReactDom from 'react-dom';
 import HintMessage from './HintMessage.jsx'
 
 const DisplaySection = ({lastGuess, randomNumber}) => {
+  if (lastGuess === '') {
+    return(
+    <div> </div>
+  )
+  } else {
     return(
       <div>
         <p>your last was:</p>
@@ -10,6 +15,8 @@ const DisplaySection = ({lastGuess, randomNumber}) => {
         <HintMessage lastGuess={lastGuess} randomNumber= {randomNumber}/>
       </div>
     )
+
+  }
 
 }
 

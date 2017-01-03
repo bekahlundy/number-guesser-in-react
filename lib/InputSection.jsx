@@ -25,6 +25,7 @@ export default class InputSection extends React.Component {
   render() {
     return(
       <div>
+        <p>Please guess a number 1-100</p>
         <input
           className='input-feild'
           type='number'

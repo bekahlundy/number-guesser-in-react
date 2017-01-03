@@ -5,13 +5,13 @@ const HintMessage = ({lastGuess, randomNumber}) => {
   if (lastGuess > randomNumber) {
     return(
       <div>
-        <p>you guessed too high</p>
+        <p>Sorry, that guess is too high. Try a lower number.</p>
       </div>
     )
   } else if (lastGuess < randomNumber) {
     return(
       <div>
-        <p>you guessed too low</p>
+        <p>Sorry, that guess is too low. Try a higher number.</p>
       </div>
     )
   } else if (lastGuess = randomNumber) {
