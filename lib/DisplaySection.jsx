@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-export default class DisplaySection extends React.Component {
-  render() {
+const DisplaySection = ({lastGuess}) => {
     return(
       <div>
         <p>your last was:</p>
-        <p>__</p>
+        <p>{lastGuess}</p>
         <p>That is too ___, try again!</p>
       </div>
     )
-  }
+
 }
+
+export default DisplaySection;
