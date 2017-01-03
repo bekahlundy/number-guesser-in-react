@@ -6,6 +6,7 @@ const DisplaySection = ({lastGuess}) => {
       <div>
         <p>your last was:</p>
         <p>{lastGuess}</p>
+        
         <p>That is too ___, try again!</p>
       </div>
     )

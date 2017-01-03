@@ -9,8 +9,16 @@ export default class Application extends React.Component {
     super()
     this.state = {
       lastGuess: '',
+      randomNumber: null,
     }
   }
+
+  componentDidMount() {
+    const random = Math.floor(Math.random() * 100)
+    console.log(random)
+    this.setState({ randomNumber: random})
+  }
+
 
   updateState(input) {
     this.setState({ lastGuess: input})
@@ -23,7 +31,8 @@ export default class Application extends React.Component {
           <HeaderSection word1='Number' word2='Guesser'/>
         </header>
         <section className='InputSection'>
-          <InputSection updateState={this.updateState.bind(this)}/>
+          <InputSection updateState={this.updateState.bind(this)}
+          lastGuess={this.state.lastGuess}/>
         </section>
         <section className='DisplaySection'>
           <DisplaySection lastGuess={this.state.lastGuess}/>

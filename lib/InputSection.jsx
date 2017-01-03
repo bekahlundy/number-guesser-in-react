@@ -8,7 +8,6 @@ export default class InputSection extends React.Component {
     super()
     this.state = {
       input: '',
-      // lastGuess: '',
     }
   }
 
@@ -18,14 +17,10 @@ export default class InputSection extends React.Component {
   }
 
   handleGuessClick() {
-    // this.setState({ lastGuess: this.state.input })
     this.props.updateState(this.state.input)
     console.log(this.state.input)
   }
 
-  handleResetChange() {
-    console.log('reset?')
-  }
 
   render() {
     return(
@@ -40,7 +35,10 @@ export default class InputSection extends React.Component {
         <Button className='clear-button' text='Clear' onClick={() => {
           this.setState({input: ''})
         }}/>
-        <Button className='reset-button' text='Reset' onClick={this.handleResetChange.bind(this)}/>
+        <Button className='reset-button' text='Reset' onClick={({lastGuess}) => {
+          this.setState({input: ''})
+          this.setState({lastGuess: 'fuck'})
+        }}/>
       </div>
     )
   }
