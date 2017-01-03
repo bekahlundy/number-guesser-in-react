@@ -17,7 +17,8 @@ export default class InputSection extends React.Component {
   }
 
   handleGuessChange() {
-    console.log('click?')
+    <p>{this.state.input}</p>
+    console.log(this.state.input)
   }
 
   handleClearChange() {
