@@ -38,7 +38,7 @@ export default class InputSection extends React.Component {
         }}/>
         <Button className='reset-button' text='Reset' onClick={({lastGuess}) => {
           this.setState({input: ''})
-          this.setState({lastGuess: 'fuck'})
+          this.setState({lastGuess: ''})
         }}/>
       </div>
     )
