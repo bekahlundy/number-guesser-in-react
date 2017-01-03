@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Button from './Button.jsx';
-import DisplaySection from './DisplaySection'
+import DisplaySection from './DisplaySection.jsx'
 
 export default class InputSection extends React.Component {
   constructor() {

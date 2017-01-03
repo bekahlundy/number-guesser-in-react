@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import HeaderSection from './HeaderSection.jsx'
 import InputSection from './InputSection.jsx'
 import DisplaySection from './DisplaySection.jsx'
+import HintMessage from './HintMessage.jsx'
 
 export default class Application extends React.Component {
   constructor() {
@@ -35,7 +36,8 @@ export default class Application extends React.Component {
           lastGuess={this.state.lastGuess}/>
         </section>
         <section className='DisplaySection'>
-          <DisplaySection lastGuess={this.state.lastGuess}/>
+          <DisplaySection lastGuess={this.state.lastGuess}
+          randomNumber={this.state.randomNumber}/>
         </section>
       </div>
     )
