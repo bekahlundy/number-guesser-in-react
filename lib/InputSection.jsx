@@ -41,7 +41,8 @@ export default class InputSection extends React.Component {
           onChange={this.handleChange.bind(this)}></input>
         <Button
           className='guess-button'
-          text='Guess' onClick={this.handleGuessClick.bind(this)}/>
+          text='Guess'
+          disabled = {!this.state.input} onClick={this.handleGuessClick.bind(this)}/>
         <Button
           className='clear-button'
           text='Clear'
