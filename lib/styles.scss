@@ -1,0 +1,29 @@
+h1 {
+  font-style: menu;
+  font-size: 45px;
+  margin:  20px;
+}
+
+input {
+  width: 105px;
+  margin-left: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+button {
+  background-color: aliceblue;
+  width: 45px;
+  margin-left: 20px;
+
+  &:hover {
+    background-color: lightblue;
+  }
+  &:disabled {
+    background-color: aliceblue;
+  }
+}

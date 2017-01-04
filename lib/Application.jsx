@@ -25,6 +25,10 @@ export default class Application extends React.Component {
     this.setState({ lastGuess: input})
   }
 
+  clearState() {
+    this.setState( { lastGuess: ''})
+  }
+
   render() {
     return(
       <div>
@@ -33,6 +37,7 @@ export default class Application extends React.Component {
         </header>
         <section className='InputSection'>
           <InputSection updateState={this.updateState.bind(this)}
+          clearState={this.clearState.bind(this)}
           lastGuess={this.state.lastGuess}/>
         </section>
         <section className='DisplaySection'>

@@ -21,6 +21,11 @@ export default class InputSection extends React.Component {
     console.log(this.state.input)
   }
 
+  handleReset() {
+    this.props.clearState();
+    this.setState( {input: ''} )
+  }
+
 
   render() {
     return(
@@ -29,17 +34,26 @@ export default class InputSection extends React.Component {
         <input
           className='input-feild'
           type='number'
+          min='0'
+          max='100'
           placeholder='Enter Your Guess'
           value={this.state.input}
           onChange={this.handleChange.bind(this)}></input>
-        <Button className='guess-button' text='Guess' onClick={this.handleGuessClick.bind(this)}/>
-        <Button className='clear-button' text='Clear' onClick={() => {
+        <Button
+          className='guess-button'
+          text='Guess' onClick={this.handleGuessClick.bind(this)}/>
+        <Button
+          className='clear-button'
+          text='Clear'
+          disabled = {!this.state.input}
+          onClick={() => {
           this.setState({input: ''})
-        }}/>
-        <Button className='reset-button' text='Reset' onClick={({lastGuess}) => {
-          this.setState({input: ''})
-          this.setState({lastGuess: ''})
-        }}/>
+        }} />
+        <Button
+          className='reset-button'
+          text='Reset'
+          disabled = {!this.state.input}
+          onClick={this.handleReset.bind(this)} />
       </div>
     )
   }

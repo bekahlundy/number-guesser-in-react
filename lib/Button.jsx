@@ -7,7 +7,9 @@ export default class Button extends React.Component {
     return(
       <div>
         <button
-          onClick={this.props.onClick}>{this.props.text}</button>
+          disabled= {this.props.disabled}
+          onClick={this.props.onClick}>{this.props.text}
+        </button>
       </div>
     )
   }
