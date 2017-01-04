@@ -1,15 +1,23 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import HintMessage from './HintMessage.jsx'
 
-const DisplaySection = ({lastGuess}) => {
+const DisplaySection = ({lastGuess, randomNumber}) => {
+  
+  if (lastGuess === '') {
+    return(
+      <div></div>
+    )
+  } else {
     return(
       <div>
-        <p>your last was:</p>
+        <p>your last guess was:</p>
         <p>{lastGuess}</p>
-        <p>That is too ___, try again!</p>
+        <HintMessage lastGuess={lastGuess} randomNumber= {randomNumber}/>
       </div>
     )
+  }
+  }
 
-}
 
 export default DisplaySection;

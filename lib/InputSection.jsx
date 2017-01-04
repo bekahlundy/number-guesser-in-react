@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Button from './Button.jsx';
-import DisplaySection from './DisplaySection'
+import DisplaySection from './DisplaySection.jsx'
 
 export default class InputSection extends React.Component {
   constructor() {
     super()
     this.state = {
       input: '',
-      // lastGuess: '',
     }
   }
 
@@ -18,29 +17,43 @@ export default class InputSection extends React.Component {
   }
 
   handleGuessClick() {
-    // this.setState({ lastGuess: this.state.input })
     this.props.updateState(this.state.input)
     console.log(this.state.input)
   }
 
-  handleResetChange() {
-    console.log('reset?')
+  handleReset() {
+    this.props.clearState();
+    this.setState( {input: ''} )
   }
+
 
   render() {
     return(
       <div>
+        <p>Please guess a number 1-100</p>
         <input
           className='input-feild'
           type='number'
+          min='0'
+          max='100'
           placeholder='Enter Your Guess'
           value={this.state.input}
           onChange={this.handleChange.bind(this)}></input>
-        <Button className='guess-button' text='Guess' onClick={this.handleGuessClick.bind(this)}/>
-        <Button className='clear-button' text='Clear' onClick={() => {
+        <Button
+          className='guess-button'
+          text='Guess' onClick={this.handleGuessClick.bind(this)}/>
+        <Button
+          className='clear-button'
+          text='Clear'
+          disabled = {!this.state.input}
+          onClick={() => {
           this.setState({input: ''})
-        }}/>
-        <Button className='reset-button' text='Reset' onClick={this.handleResetChange.bind(this)}/>
+        }} />
+        <Button
+          className='reset-button'
+          text='Reset'
+          disabled = {!this.state.input}
+          onClick={this.handleReset.bind(this)} />
       </div>
     )
   }
