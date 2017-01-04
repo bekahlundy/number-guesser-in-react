@@ -3,9 +3,9 @@ import ReactDom from 'react-dom';
 
 const HintMessage = ({lastGuess, randomNumber}) => {
 
-  if (lastGuess < 0 || lastGuess > 100) {
+  if (lastGuess < 0 || lastGuess > 100 || lastGuess === NaN) {
     return(
-      <div>make sure you enter a number between 1 and 100!</div>
+      <p>make sure you enter a number between 1 and 100!</p>
     )
   } else if (lastGuess > randomNumber) {
     return(
